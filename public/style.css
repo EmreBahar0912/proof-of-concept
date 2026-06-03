@@ -57,11 +57,13 @@ main {
         display: grid;
         gap: 1rem;
         padding: 1rem;
+        padding-bottom: 100px;
 
         @media screen and (min-width: 422px) {
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             padding: 1rem;
+            padding-bottom: 100px;
         }
 
         .pokemon-card {
@@ -119,5 +121,15 @@ footer {
         display: flex;
         justify-content: space-around;
         padding: 1rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            svg {
+                margin: 0 auto;
+            }
+        }
     }
 }
