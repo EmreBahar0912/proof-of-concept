@@ -16,11 +16,32 @@ body {
 
 header {
     form {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        svg {
+            position: absolute;
+            left: 2rem;
+            width: 22px;
+            height: 22px;
+        }
+
         input {
-            padding: 1rem;
+            padding: 1rem 1rem 1rem 3rem;
             border: none;
             width: calc(100% - 2rem);
             margin: 1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+
+            &::placeholder {
+                font-family: 'Inter', Arial, sans-serif;
+            }
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 }
