@@ -5,11 +5,20 @@
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: Inter;
+    src: url(/Inter-Regular.woff2);
+}
+
 body {
     background-color: #EDF6FF;
 }
 
 main {
+    h1 {
+        font-family: 'Inter', Arial, sans-serif;
+    }
+
     .pokemon-cards-container {
         display: grid;
         gap: 1rem;
@@ -37,6 +46,7 @@ main {
                 border-radius: 8px;
                 margin-left: .5rem;
                 margin-top: .5rem;
+                font-family: 'Inter', Arial, sans-serif;
             }
 
             img {
@@ -56,6 +66,7 @@ main {
                 span {
                     font-size: 24px;
                     font-weight: bold;
+                    font-family: 'Inter', Arial, sans-serif;
                 }
             }
         }
