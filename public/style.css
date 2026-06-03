@@ -14,9 +14,22 @@ body {
     background-color: #EDF6FF;
 }
 
+header {
+    form {
+        input {
+            padding: 1rem;
+            border: none;
+            width: calc(100% - 2rem);
+            margin: 1rem;
+        }
+    }
+}
+
 main {
     h1 {
         font-family: 'Inter', Arial, sans-serif;
+        padding-left: 1rem;
+        padding-top: 1rem;
     }
 
     .pokemon-cards-container {
