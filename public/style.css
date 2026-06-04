@@ -133,17 +133,16 @@ main {
 
 .detailview-page-container {
     .pokemon-type-container {
-    display: flex;
-    align-items: center;
-    gap: .3rem;
-    background-color: #DBE3F0;
-    width: fit-content;
-    padding-block: .2rem;
-    padding-inline: .5em;
-    border-radius: 28px;
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        background-color: #DBE3F0;
+        width: fit-content;
+        padding-block: .2rem;
+        padding-inline: .5em;
+        border-radius: 28px;
 
         div {
-            content: '';
             background-color: #FF4F68;
             border-radius: 50%;
             width: 10px;
