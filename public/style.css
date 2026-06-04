@@ -142,18 +142,18 @@ main {
     padding-inline: .5em;
     border-radius: 28px;
 
-    div {
-        content: '';
-        background-color: #FF4F68;
-        border-radius: 50%;
-        width: 10px;
-        height: 10px;
-    }
+        div {
+            content: '';
+            background-color: #FF4F68;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+        }
 
-    p {
-        font-weight: bold;
+        p {
+            font-weight: bold;
+        }
     }
-}
 
     .pokemon-image-detailview {
         width: 200px;
