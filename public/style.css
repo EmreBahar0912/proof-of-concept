@@ -114,6 +114,26 @@ main {
     }
 }
 
+/* DETAILVIEW PAGE */
+.pokemon-details-tab-content {
+    display: none;
+}
+
+#about:target,
+#stats:target,
+#evolution:target {
+    display: block;
+}
+
+#about {
+    display: block;
+}
+
+#stats:target ~ #about,
+#evolution:target ~ #about {
+    display: none;
+}
+
 footer {
     background: rgba(237, 246, 255, 0.85);
     backdrop-filter: blur(10px);

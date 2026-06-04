@@ -28,46 +28,6 @@
         <a href="#evolution">Evolution</a>
     </section>
 
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>{{ pokemon.name | capitalize }}</td>
-        </tr>
-        <tr>
-            <td>ID</td>
-            <td>{{ pokemon.id }}</td>
-        </tr>
-        <tr>
-            <td>Base XP</td>
-            <td>{{ pokemon.base_experience }} XP</td>
-        </tr>
-        <tr>
-            <td>Weight</td>
-            <td>{{ pokemon.weight | divided_by: 10 }} kg</td>
-        </tr>
-        <tr>
-            <td>Height</td>
-            <td>{{ pokemon.height | divided_by: 10 }} m</td>
-        </tr>
-        <tr>
-            <td>Types</td>
-            <td>
-                {% for type in pokemon.types %}
-                    {{ type.type.name | capitalize }}{% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-            </td>
-        </tr>
-        <tr>
-            <td>Abilities</td>
-            <td>
-                {% for ability in pokemon.abilities %}
-                    {{ ability.ability.name | capitalize }}{% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-            </td>
-        </tr>
-    </table>
-</section>
-
     <section id="stats" class="pokemon-details-tab-content">
         {% for stat in pokemon.stats %}
             <p>{{ stat.stat.name }}: {{ stat.base_stat }}</p>
@@ -78,6 +38,47 @@
         {% for evo in evolutions %}
             <p>{{ evo.name }}</p>
         {% endfor %}
+    </section>
+
+    <section id="about" class="pokemon-details-tab-content">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>{{ pokemon.name | capitalize }}</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>{{ pokemon.id }}</td>
+            </tr>
+            <tr>
+                <td>Base XP</td>
+                <td>{{ pokemon.base_experience }} XP</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>{{ pokemon.weight | divided_by: 10 }} kg</td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td>{{ pokemon.height | divided_by: 10 }} m</td>
+            </tr>
+            <tr>
+                <td>Types</td>
+                <td>
+                    {% for type in pokemon.types %}
+                        {{ type.type.name | capitalize }}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>Abilities</td>
+                <td>
+                    {% for ability in pokemon.abilities %}
+                        {{ ability.ability.name | capitalize }}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
     </section>
 </section>
 
