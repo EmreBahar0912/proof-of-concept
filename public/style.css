@@ -170,6 +170,32 @@ main {
     }
 
     .pokemon-details-container {
+        #about {
+            table {
+                tr {
+                    td:first-child {
+                        font-weight: bold;
+                    }
+
+                    td:last-child {
+                        color: #757292;
+                    }
+                }
+            }
+        }
+
+        .pokemon-details-tab {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-weight: bold;
+            }
+        }
+
         .pokemon-details-tab-content {
             display: none;
         }
