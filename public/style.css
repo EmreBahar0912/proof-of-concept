@@ -132,6 +132,15 @@ main {
 }
 
 .detailview-page-container {
+    background: linear-gradient(
+        to bottom,
+        #EDF6FF 0%,
+        #EDF6FF 38%,
+        white 38%,
+        white 100%
+    );
+    min-height: 100vh;
+
     .pokemon-type-container {
         display: flex;
         align-items: center;
