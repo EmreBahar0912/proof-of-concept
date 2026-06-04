@@ -125,12 +125,6 @@ main {
     }
 }
 
-.detail-title-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .detailview-page-container {
     background: linear-gradient(
         to bottom,
@@ -140,6 +134,12 @@ main {
         white 100%
     );
     min-height: 100vh;
+
+    .detail-title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .pokemon-type-container {
         display: flex;
