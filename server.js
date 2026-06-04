@@ -59,7 +59,7 @@ app.get('/pokemon/:id', async function (request, response) {
         current = current.evolves_to[0];
     }
     
-    response.render('detail.liquid', { pokemon, evolutions })
+    response.render('detailview.liquid', { pokemon, evolutions })
 })
 
 app.set('port', process.env.PORT || 8000)
