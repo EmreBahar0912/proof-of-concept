@@ -32,10 +32,34 @@ app.get('/', async function (request, response) {
 app.get('/pokemon/:id', async function (request, response) {
     const id = request.params.id;
     
+    // Pokémon data
     const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const pokemon = await pokemonResponse.json();
-
-   response.render('detailview.liquid', { pokemon })
+    
+    // Species voor evolution chain URL
+    const speciesResponse = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    const species = await speciesResponse.json();
+    
+    // Evolution chain
+    const evoResponse = await fetch(species.evolution_chain.url);
+    const evoData = await evoResponse.json();
+    
+    // Evolutions uit de chain halen
+    const evolutions = [];
+    let current = evoData.chain;
+    
+    while (current) {
+        const evoId = current.species.url.split('/').filter(Boolean).pop();
+        evolutions.push({
+            name: current.species.name,
+            id: evoId,
+            image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${evoId}.png`
+        });
+        // volgende evolutie
+        current = current.evolves_to[0];
+    }
+    
+    response.render('detail.liquid', { pokemon, evolutions })
 })
 
 app.set('port', process.env.PORT || 8000)
