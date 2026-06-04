@@ -120,6 +120,7 @@ main {
     justify-content: space-between;
     padding-block: 1rem .5rem;
     padding-inline: 1rem;
+    font-family: 'Inter', Arial, sans-serif;
 
     nav {
         display: flex;
@@ -136,6 +137,7 @@ main {
         white 100%
     );
     min-height: 100vh;
+    font-family: 'Inter', Arial, sans-serif;
 
     .detail-title-container {
         display: flex;
