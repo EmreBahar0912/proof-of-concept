@@ -154,6 +154,12 @@ main {
     }
 }
 
+.pokemon-image-detailview {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
 .pokemon-details-tab-content {
     display: none;
 }
