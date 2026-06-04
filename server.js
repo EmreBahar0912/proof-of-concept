@@ -14,7 +14,6 @@ app.engine('liquid', engine.express());
 app.set('views', './views')
 
 app.get('/', async function (request, response) {
-
     const pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
     const pokemonData = await pokemonResponse.json();
     
@@ -28,6 +27,15 @@ app.get('/', async function (request, response) {
     });
 
    response.render('index.liquid', { pokemons: allPokemon })
+})
+
+app.get('/pokemon/:id', async function (request, response) {
+    const id = request.params.id;
+    
+    const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const pokemon = await pokemonResponse.json();
+
+   response.render('detailview.liquid', { pokemon })
 })
 
 app.set('port', process.env.PORT || 8000)
