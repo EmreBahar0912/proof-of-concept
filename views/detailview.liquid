@@ -10,8 +10,8 @@
 </section>
 
 <section class="detail-title-wrapper">
-    <h1>Pokemon name</h1>
-    <p>#001</p>
+    <h1>{{ pokemon.name }}</h1>
+    <p>00{{ pokemon.id }}</p>
 </section>
 
 <div>
@@ -19,7 +19,7 @@
     <p>Fire</p>
 </div>
 
-<img src="" alt="">
+<img src="{{ pokemon.sprites.other['official-artwork'].front_default }}" alt="{{ pokemon.name }}">
 
 <section class="pokemon-details-section">
     <section class="pokemon-details-tab">
