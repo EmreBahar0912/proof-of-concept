@@ -69,11 +69,15 @@
 </section>
 
     <section id="stats" class="pokemon-details-tab-content">
-        <p>Pokemon stats</p>
+        {% for stat in pokemon.stats %}
+            <p>{{ stat.stat.name }}: {{ stat.base_stat }}</p>
+        {% endfor %}
     </section>
 
     <section id="evolution" class="pokemon-details-tab-content">
-        <p>Pokemon evolutions</p>
+        {% for evo in evolutions %}
+            <p>{{ evo.name }}</p>
+        {% endfor %}
     </section>
 </section>
 
