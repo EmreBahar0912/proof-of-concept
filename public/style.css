@@ -169,23 +169,25 @@ main {
         margin: 0 auto;
     }
 
-    .pokemon-details-tab-content {
-        display: none;
-    }
+    .pokemon-details-container {
+        .pokemon-details-tab-content {
+            display: none;
+        }
 
-    #about:target,
-    #stats:target,
-    #evolution:target {
-        display: block;
-    }
+        #about:target,
+        #stats:target,
+        #evolution:target {
+            display: block;
+        }
 
-    #about {
-        display: block;
-    }
+        #about {
+            display: block;
+        }
 
-    #stats:target ~ #about,
-    #evolution:target ~ #about {
-        display: none;
+        #stats:target ~ #about,
+        #evolution:target ~ #about {
+            display: none;
+        }
     }
 }
 
