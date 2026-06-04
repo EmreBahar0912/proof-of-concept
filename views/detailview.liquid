@@ -1,85 +1,87 @@
 {% render 'views/head.liquid' %}
 
-<section class="detailview-header">
-    <div>
+<header class="detailview-header">
+    <nav>
         <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.625 14.625L0.625 7.625L7.625 0.625" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Go back</span>
-    </div>
+    </nav>
 
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
-</section>
+</header>
 
-<section class="detail-title-container">
-    <h1>{{ pokemon.name }}</h1>
-    <p>00{{ pokemon.id }}</p>
-</section>
-
-<div class="pokemon-type-container">
-    <div></div>
-    <p>Fire</p>
-</div>
-
-<img class="pokemon-image-detailview" src="{{ pokemon.sprites.other['official-artwork'].front_default }}" alt="{{ pokemon.name }}">
-
-<section class="pokemon-details-container">
-    <section class="pokemon-details-tab">
-        <a href="#about">About</a>
-        <a href="#stats">Stats</a>
-        <a href="#evolution">Evolution</a>
+<main class="detailview-page-container">
+    <section class="detail-title-container">
+        <h1>{{ pokemon.name }}</h1>
+        <p>00{{ pokemon.id }}</p>
     </section>
 
-    <section id="stats" class="pokemon-details-tab-content">
-        {% for stat in pokemon.stats %}
-            <p>{{ stat.stat.name }}: {{ stat.base_stat }}</p>
-        {% endfor %}
-    </section>
+    <div class="pokemon-type-container">
+        <div></div>
+        <p>Fire</p>
+    </div>
 
-    <section id="evolution" class="pokemon-details-tab-content">
-        {% for evo in evolutions %}
-            <p>{{ evo.name }}</p>
-        {% endfor %}
-    </section>
+    <img class="pokemon-image-detailview" src="{{ pokemon.sprites.other['official-artwork'].front_default }}" alt="{{ pokemon.name }}">
 
-    <section id="about" class="pokemon-details-tab-content">
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>{{ pokemon.name | capitalize }}</td>
-            </tr>
-            <tr>
-                <td>ID</td>
-                <td>{{ pokemon.id }}</td>
-            </tr>
-            <tr>
-                <td>Base XP</td>
-                <td>{{ pokemon.base_experience }} XP</td>
-            </tr>
-            <tr>
-                <td>Weight</td>
-                <td>{{ pokemon.weight | divided_by: 10 }} kg</td>
-            </tr>
-            <tr>
-                <td>Height</td>
-                <td>{{ pokemon.height | divided_by: 10 }} m</td>
-            </tr>
-            <tr>
-                <td>Types</td>
-                <td>
-                    {% for type in pokemon.types %}
-                        {{ type.type.name | capitalize }}{% unless forloop.last %}, {% endunless %}
-                    {% endfor %}
-                </td>
-            </tr>
-            <tr>
-                <td>Abilities</td>
-                <td>
-                    {% for ability in pokemon.abilities %}
-                        {{ ability.ability.name | capitalize }}{% unless forloop.last %}, {% endunless %}
-                    {% endfor %}
-                </td>
-            </tr>
-        </table>
+    <section class="pokemon-details-container">
+        <section class="pokemon-details-tab">
+            <a href="#about">About</a>
+            <a href="#stats">Stats</a>
+            <a href="#evolution">Evolution</a>
+        </section>
+
+        <section id="stats" class="pokemon-details-tab-content">
+            {% for stat in pokemon.stats %}
+                <p>{{ stat.stat.name }}: {{ stat.base_stat }}</p>
+            {% endfor %}
+        </section>
+
+        <section id="evolution" class="pokemon-details-tab-content">
+            {% for evo in evolutions %}
+                <p>{{ evo.name }}</p>
+            {% endfor %}
+        </section>
+
+        <section id="about" class="pokemon-details-tab-content">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ pokemon.name | capitalize }}</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>{{ pokemon.id }}</td>
+                </tr>
+                <tr>
+                    <td>Base XP</td>
+                    <td>{{ pokemon.base_experience }} XP</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>{{ pokemon.weight | divided_by: 10 }} kg</td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td>{{ pokemon.height | divided_by: 10 }} m</td>
+                </tr>
+                <tr>
+                    <td>Types</td>
+                    <td>
+                        {% for type in pokemon.types %}
+                            {{ type.type.name | capitalize }}{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Abilities</td>
+                    <td>
+                        {% for ability in pokemon.abilities %}
+                            {{ ability.ability.name | capitalize }}{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </section>
     </section>
-</section>
+</main>
 
 {% render 'views/foot.liquid' %}
