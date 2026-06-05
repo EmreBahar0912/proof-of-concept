@@ -49,7 +49,7 @@
                     <img src="{{ evo.image }}" alt="{{ evo.name }}">
                     <div>
                         <p>00{{ pokemon.id }}</p>
-                        <p>{{ evo.name }}</p>
+                        <p>{{ evo.name | capitalize }}</p>
                     </div>
                 </article>
             {% endfor %}

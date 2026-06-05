@@ -133,8 +133,8 @@ main {
     background: linear-gradient(
         to bottom,
         #EDF6FF 0%,
-        #EDF6FF 38%,
-        white 38%,
+        #EDF6FF 40.5%,
+        white 40.5%,
         white 100%
     );
     min-height: 100vh;
@@ -229,6 +229,24 @@ main {
 
                 img {
                     width: 100px;
+                }
+
+                div {
+                    display: grid;
+                    gap: .5rem;
+
+                    p:first-of-type {
+                        background-color: #5631E8;
+                        color: white;
+                        width: fit-content;
+                        padding-block: .2em;
+                        padding-inline: .5em;
+                        border-radius: 8px;
+                    }
+
+                    p:last-of-type {
+                        font-weight: bold;
+                    }
                 }
             }
 
