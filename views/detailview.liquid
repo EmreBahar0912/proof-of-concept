@@ -32,9 +32,12 @@
         <section id="stats" class="pokemon-details-tab-content">
             <div class="stats-container">
                 {% for stat in pokemon.stats %}
-                    <div class="stats-row">
-                        <span class="stats-name">{{ stat.stat.name }}</span>
-                        <span class="stats-value">{{ stat.base_stat }}</span>
+                    <div class="stats-row" style="display: flex; flex-direction: column">
+                        <div style="display:flex; justify-content: space-between;">
+                            <span class="stats-name">{{ stat.stat.name }}</span>
+                            <span class="stats-value">{{ stat.base_stat }}</span>
+                        </div>
+                        <div style="width:100%; height: 6px; background-color: red;"></div>
                     </div>
                 {% endfor %}
             </div>
