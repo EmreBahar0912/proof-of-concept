@@ -201,6 +201,22 @@ main {
             }
         }
 
+        #stats {
+            .stats-container {
+                padding-inline: 1.3rem;
+
+                .stats-row {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .stats-name {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
         .pokemon-details-tab {
             display: flex;
             justify-content: space-around;
