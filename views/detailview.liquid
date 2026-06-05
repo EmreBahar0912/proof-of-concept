@@ -45,7 +45,13 @@
 
         <section id="evolution" class="pokemon-details-tab-content">
             {% for evo in evolutions %}
-                <p>{{ evo.name }}</p>
+                <article class="evolution-container">
+                    <img src="{{ evo.image }}" alt="{{ evo.name }}">
+                    <div>
+                        <p>00{{ pokemon.id }}</p>
+                        <p>{{ evo.name }}</p>
+                    </div>
+                </article>
             {% endfor %}
         </section>
 
