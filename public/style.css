@@ -279,7 +279,7 @@ main {
             }
         }
 
-        .pokemon-details-tab-content {
+        .pokemon-details-tab-content:not(:target) {
             display: none;
         }
 
