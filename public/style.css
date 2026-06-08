@@ -122,10 +122,16 @@ main {
     padding-inline: 1rem;
     font-family: 'Inter', Arial, sans-serif;
 
-    nav {
+    button {
         display: flex;
         align-items: center;
         gap: .5rem;
+        background: none;
+        color: inherit;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Inter', Arial, sans-serif;
     }
 }
 
