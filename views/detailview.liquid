@@ -37,7 +37,9 @@
                             <span class="stats-name">{{ stat.stat.name }}</span>
                             <span class="stats-value">{{ stat.base_stat }}</span>
                         </div>
-                        <div style="width:100%; height: 6px; background-color: red;"></div>
+                        <div style="width: 100%; height: 6px; background-color: #F3F3F7; border-radius: 12px;">
+                            <div style="width: {{ stat.base_stat | divided_by: 255.0 | times: 100 }}%; height: 6px; background-color: #5631E8; border-radius: 12px"></div>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
