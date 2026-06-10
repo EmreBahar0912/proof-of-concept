@@ -14,28 +14,54 @@ if (form) {
     });
 }
 
-
 // LIKE BUTTON
-document.querySelector('.heart').addEventListener('click', function() {
-    this.closest('.heart-icon-container').classList.toggle('on');
-});
-
-// ONCLICK SAVE POKEMON
-document.querySelector('.heart').addEventListener('click', function() {
-    const container = this.closest('.heart-icon-container');
-    container.classList.toggle('on');
-
-    const id = this.dataset.id;
-    const name = this.dataset.name;
-    const image = this.dataset.image;
-
-    let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-
-    if (container.classList.contains('on')) {
-        favorites.push({ id, name, image });
-    } else {
-        favorites = favorites.filter(p => p.id !== id);
+const heart = document.querySelector('.heart');
+if (heart) {
+    // Bij laden: check of al geliked
+    const id = heart.dataset.id;
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    if (favorites.some(p => p.id === id)) {
+        heart.closest('.heart-icon-container').classList.add('on');
     }
 
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-});
+    // Bij klik: toggle + opslaan
+    heart.addEventListener('click', function() {
+        const container = this.closest('.heart-icon-container');
+        container.classList.toggle('on');
+
+        const id = this.dataset.id;
+        const name = this.dataset.name;
+        const image = this.dataset.image;
+
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+        if (container.classList.contains('on')) {
+            favorites.push({ id, name, image });
+        } else {
+            favorites = favorites.filter(p => p.id !== id);
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    });
+}
+
+// FAVORITES PAGINA
+const favContainer = document.getElementById('favorites-container');
+if (favContainer) {
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+    if (favorites.length === 0) {
+        favContainer.innerHTML = '<p>Geen favorieten opgeslagen.</p>';
+    } else {
+        favContainer.innerHTML = favorites.map(p => `
+            <a href="/pokemon/${p.id}">
+                <article class="pokemon-card">
+                    <img src="${p.image}" alt="${p.name}">
+                    <div class="pokemon-name-container">
+                        <span>${p.name}</span>
+                    </div>
+                </article>
+            </a>
+        `).join('');
+    }
+}
