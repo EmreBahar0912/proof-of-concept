@@ -62,6 +62,22 @@ app.get('/pokemon/:id', async function (request, response) {
     response.render('detailview.liquid', { pokemon, evolutions })
 })
 
+app.get('/favorites', async function (request, response) {
+    const pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
+    const pokemonData = await pokemonResponse.json();
+    
+    const allPokemon = pokemonData.results.map((p) => {
+        const id = p.url.split('/').filter(Boolean).pop();
+        return {
+            name: p.name,
+            id: id,
+            image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+        }
+    });
+
+   response.render('favorites.liquid', { pokemons: allPokemon })
+})
+
 app.set('port', process.env.PORT || 8000)
 
 app.listen(app.get('port'), function () {
