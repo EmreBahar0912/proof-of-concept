@@ -18,8 +18,7 @@ app.get('/', async function (request, response) {
     const limit = 20;
     const offset = (page - 1) * limit;
 
-    const pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
-    const pokemonData = await pokemonResponse.json();
+    const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);    const pokemonData = await pokemonResponse.json();
     
     const allPokemon = pokemonData.results.map((p) => {
         const id = p.url.split('/').filter(Boolean).pop();
