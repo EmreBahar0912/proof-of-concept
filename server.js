@@ -14,6 +14,10 @@ app.engine('liquid', engine.express());
 app.set('views', './views')
 
 app.get('/', async function (request, response) {
+    const page = parseInt(request.query.page) || 1;
+    const limit = 20;
+    const offset = (page - 1) * limit;
+
     const pokemonResponse = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10');
     const pokemonData = await pokemonResponse.json();
     
@@ -26,7 +30,9 @@ app.get('/', async function (request, response) {
         }
     });
 
-   response.render('index.liquid', { pokemons: allPokemon })
+    const totalPages = Math.ceil(pokemonData.count / limit);
+
+   response.render('index.liquid', { pokemons: allPokemon, page, totalPages })
 })
 
 app.get('/pokemon/:id', async function (request, response) {
