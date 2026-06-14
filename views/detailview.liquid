@@ -29,7 +29,7 @@
     <div class="all-pokemon-type-container">
     {% for type in pokemon.types %}
         <div class="pokemon-type-container">
-            <div></div>
+            <div data-type="{{ type.type.name }}"></div>
             <p>{{ type.type.name | capitalize }}</p>
         </div>
     {% endfor %}

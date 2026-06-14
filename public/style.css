@@ -285,10 +285,28 @@ main {
             margin-inline: 1.3rem 0rem;
 
             div {
-                background-color: #FF4F68;
                 border-radius: 50%;
                 width: 10px;
                 height: 10px;
+
+                &[data-type="fire"] { background-color: #FF4F68; }
+                &[data-type="water"] { background-color: #2E86C1; }
+                &[data-type="grass"] { background-color: #64BC55; }
+                &[data-type="poison"] { background-color: #AB6AC8; }
+                &[data-type="electric"] { background-color: #FFCF00; }
+                &[data-type="psychic"] { background-color: #E74C3C; }
+                &[data-type="normal"] { background-color: #7F8C8D; }
+                &[data-type="fighting"] { background-color: #C0392B; }
+                &[data-type="rock"] { background-color: #626567; }
+                &[data-type="ground"] { background-color: #A04000; }
+                &[data-type="ice"] { background-color: #1A5276; }
+                &[data-type="bug"] { background-color: #1E8449; }
+                &[data-type="ghost"] { background-color: #6C3483; }
+                &[data-type="dragon"] { background-color: #4A235A; }
+                &[data-type="dark"] { background-color: #2C3E50; }
+                &[data-type="steel"] { background-color: #566573; }
+                &[data-type="fairy"] { background-color: #E91E8C; }
+                &[data-type="flying"] { background-color: #1A5276; }
             }
 
             p {
