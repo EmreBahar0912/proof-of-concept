@@ -65,3 +65,43 @@ if (favContainer) {
         `).join('');
     }
 }
+
+// TAB INDICATOR
+const indicator = document.querySelector('.tab-indicator');
+if (indicator) {
+    const tabs = document.querySelectorAll('.pokemon-details-tab a');
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            indicator.style.left = `${index * 33.33}%`;
+        });
+    });
+
+    const hash = window.location.hash || '#about';
+    const activeIndex = ['#about', '#stats', '#evolution'].indexOf(hash);
+    if (activeIndex !== -1) indicator.style.left = `${activeIndex * 33.33}%`;
+}
+
+
+// TAB ACTIVE STATE
+const tabLinks = document.querySelectorAll('.pokemon-details-tab a');
+if (tabLinks.length) {
+    const indicator = document.querySelector('.tab-indicator');
+
+    const setActive = (hash) => {
+        tabLinks.forEach(a => {
+            const isActive = a.getAttribute('href') === hash;
+            a.classList.toggle('active', isActive);
+            if (isActive && indicator) {
+                indicator.style.left = a.offsetLeft + 'px';
+                indicator.style.width = a.offsetWidth + 'px';
+            }
+        });
+    };
+
+    setActive(window.location.hash || '#about');
+
+    tabLinks.forEach(a => {
+        a.addEventListener('click', () => setActive(a.getAttribute('href')));
+    });
+}

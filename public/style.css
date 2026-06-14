@@ -320,13 +320,35 @@ main {
 
         .pokemon-details-tab {
             display: flex;
+            position: relative;
             justify-content: space-around;
+            border-bottom: 2px solid #DCDBE7;
             margin-bottom: 2rem;
+            margin-inline: 1.4rem;
 
             a {
                 text-decoration: none;
-                color: inherit;
+                color: #757391;
                 font-weight: bold;
+                padding-bottom: .5rem;
+                border-bottom: 2px solid transparent;
+                margin-bottom: -2px;
+                transition: color 0.2s, border-color 0.2s;
+
+                &.active {
+                    color: black;
+                    border-bottom: 2px solid #5631E8;
+                }
+            }
+
+            .tab-indicator {
+                position: absolute;
+                bottom: -2px;
+                height: 2px;
+                width: 33.33%;
+                background-color: #5631E8;
+                transition: left 0.3s ease;
+                left: 0%;
             }
         }
 
