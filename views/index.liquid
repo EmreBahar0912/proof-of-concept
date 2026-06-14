@@ -22,19 +22,19 @@
                 </article>
             </a>
         {% endfor %}
-
-        <nav class="pagination">
-            {% if page > 1 %}
-                <a href="/?page={{ page | minus: 1 }}">Vorige</a>
-            {% endif %}
-
-            <span>{{ page }} / {{ totalPages }}</span>
-
-            {% if page < totalPages %}
-                <a href="/?page={{ page | plus: 1 }}">Volgende</a>
-            {% endif %}
-        </nav>
     </section>
+
+    <nav class="pagination">
+        {% if page > 1 %}
+            <a href="/?page={{ page | minus: 1 }}">Vorige</a>
+        {% endif %}
+
+        <span>{{ page }} / {{ totalPages }}</span>
+
+        {% if page < totalPages %}
+            <a href="/?page={{ page | plus: 1 }}">Volgende</a>
+        {% endif %}
+    </nav>
 </main>
 
 <footer>

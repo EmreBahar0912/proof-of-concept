@@ -20,6 +20,10 @@ body {
     background-color: #EDF6FF;
 }
 
+span, p {
+    font-family: 'Inter', Arial, sans-serif;
+}
+
 @view-transition {
     navigation: auto;
 }
@@ -151,6 +155,26 @@ main {
                     font-weight: bold;
                     font-family: 'Inter', Arial, sans-serif;
                 }
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 8rem;
+
+        a {
+            color: #5631E8;
+            text-decoration: none;
+            border-radius: 12px;
+            padding: .5rem 1rem;
+            font-family: 'Inter', Arial, sans-serif;
+
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
