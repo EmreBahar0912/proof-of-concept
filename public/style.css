@@ -459,6 +459,11 @@ footer {
 
             svg {
                 margin: 0 auto;
+                outline: #5631E8;
+            }
+
+            &.active {
+                color: #5631E8;
             }
         }
     }
