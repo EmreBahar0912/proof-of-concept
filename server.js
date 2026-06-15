@@ -17,21 +17,43 @@ app.get('/', async function (request, response) {
     const page = parseInt(request.query.page) || 1;
     const limit = 20;
     const offset = (page - 1) * limit;
+    const type = request.query.type;
 
-    const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);    const pokemonData = await pokemonResponse.json();
-    
-    const allPokemon = pokemonData.results.map((p) => {
-        const id = p.url.split('/').filter(Boolean).pop();
-        return {
-            name: p.name,
-            id: id,
-            image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
-        }
-    });
+    let allPokemon = [];
+    let totalPages = 1;
 
-    const totalPages = Math.ceil(pokemonData.count / limit);
+    if (type) {
+        const typeResponse = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+        const typeData = await typeResponse.json();
 
-   response.render('index.liquid', { pokemons: allPokemon, page, totalPages })
+        allPokemon = typeData.pokemon.map(({ pokemon }) => {
+            const id = pokemon.url.split('/').filter(Boolean).pop();
+            return {
+                name: pokemon.name,
+                id,
+                image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+            };
+        });
+
+        totalPages = Math.ceil(allPokemon.length / limit);
+        allPokemon = allPokemon.slice(offset, offset + limit);
+    } else {
+        const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
+        const pokemonData = await pokemonResponse.json();
+
+        allPokemon = pokemonData.results.map((p) => {
+            const id = p.url.split('/').filter(Boolean).pop();
+            return {
+                name: p.name,
+                id,
+                image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+            };
+        });
+
+        totalPages = Math.ceil(pokemonData.count / limit);
+    }
+
+    response.render('index.liquid', { pokemons: allPokemon, page, totalPages, type });
 })
 
 app.get('/pokemon/:id', async function (request, response) {
