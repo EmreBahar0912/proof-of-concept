@@ -8,7 +8,39 @@
 </header>
 
 <main>
-    <h1>All Pokémon</h1>
+    <section>
+        <h1>All Pokémon</h1>
+
+        <button class="theme-toggle">
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <div class="filter-dropdown" id="filter-dropdown">
+                <p>Filter by type</p>
+                <ul>
+                    <li><a href="/?type=fire">Fire</a></li>
+                    <li><a href="/?type=water">Water</a></li>
+                    <li><a href="/?type=grass">Grass</a></li>
+                    <li><a href="/?type=poison">Poison</a></li>
+                    <li><a href="/?type=electric">Electric</a></li>
+                    <li><a href="/?type=psychic">Psychic</a></li>
+                    <li><a href="/?type=normal">Normal</a></li>
+                    <li><a href="/?type=fighting">Fighting</a></li>
+                    <li><a href="/?type=rock">Rock</a></li>
+                    <li><a href="/?type=ground">Ground</a></li>
+                    <li><a href="/?type=ice">Ice</a></li>
+                    <li><a href="/?type=bug">Bug</a></li>
+                    <li><a href="/?type=ghost">Ghost</a></li>
+                    <li><a href="/?type=dragon">Dragon</a></li>
+                    <li><a href="/?type=dark">Dark</a></li>
+                    <li><a href="/?type=steel">Steel</a></li>
+                    <li><a href="/?type=fairy">Fairy</a></li>
+                    <li><a href="/?type=flying">Flying</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section class="pokemon-cards-container">
         {% for pokemon in pokemons %}
             <a href="/pokemon/{{ pokemon.id }}">
