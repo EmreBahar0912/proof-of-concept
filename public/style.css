@@ -93,10 +93,83 @@ header {
 }
 
 main {
+    .heading-filter-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
     h1 {
         font-family: 'Inter', Arial, sans-serif;
         padding-left: 1rem;
         padding-top: 1rem;
+    }
+
+    details {
+        position: relative;
+
+        summary {
+            display: flex;
+            align-items: center;
+            background: blue;
+            color: white;
+            width: fit-content;
+            height: 39px;
+            padding-inline: 1rem;
+            padding-block: .6rem;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            border-radius: 10px;
+            gap: .5rem;
+            cursor: pointer;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+    }
+
+    .filter-dropdown {
+        display: block;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        left: auto;
+        width: 220px;
+        z-index: 100;
+
+        p {
+            font-weight: bold;
+            font-family: 'Inter', Arial, sans-serif;
+            margin-bottom: .5rem;
+            color: #757292;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+
+            li a {
+                text-decoration: none;
+                font-family: 'Inter', Arial, sans-serif;
+                font-size: 13px;
+                font-weight: bold;
+                padding: .3rem .7rem;
+                border-radius: 20px;
+                background-color: #F3F3F7;
+                color: #333;
+                display: block;
+
+                &:hover {
+                    background-color: #5631E8;
+                    color: white;
+                }
+            }
+        }
     }
 
     .pokemon-cards-container {
