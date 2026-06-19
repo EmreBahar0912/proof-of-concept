@@ -1,10 +1,11 @@
 # Hypersolid - Pokémon App
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
-<img width="474" height="604" alt="image" src="https://github.com/user-attachments/assets/adf04102-eff1-4fbf-b833-6a8ec268f1e7" />
 
 ### Pokédex App
 
 Een server-side gerenderde Pokédex webapplicatie gebouwd als schoolopdracht bij FDND. Gebruikers kunnen bladeren door Pokémon, filteren op type, zoeken op naam of ID, een detailpagina bekijken en favorieten opslaan.
+
+<img width="474" height="604" alt="image" src="https://github.com/user-attachments/assets/9f5b56d5-5ee3-4cf3-9fdb-7656083c778e" />
 
 **Tech stack**
 - Runtime: Node.js
