@@ -1,5 +1,6 @@
 # Hypersolid - Pokémon App
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+<img width="474" height="604" alt="image" src="https://github.com/user-attachments/assets/adf04102-eff1-4fbf-b833-6a8ec268f1e7" />
 
 ### Pokédex App
 
