@@ -1,15 +1,6 @@
 # Hypersolid - Pokémon App
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
-
 ### Pokédex App
 
 Een server-side gerenderde Pokédex webapplicatie gebouwd als schoolopdracht bij FDND. Gebruikers kunnen bladeren door Pokémon, filteren op type, zoeken op naam of ID, een detailpagina bekijken en favorieten opslaan.
@@ -80,6 +71,15 @@ Paginaovergangen maken gebruik van de View Transitions API voor vloeiende animat
 
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+Volg deze stappen om de development omgeving in te richten om aan deze repository te kunnen werken:
+
+Stap 1) Installeer de [NodeJS ontwikkelomgeving](https://nodejs.org/en/download). Kies voor NodeJS 24.13.0 (LTS, long-term support), download het installatiebestand en doorloop het installatieproces.
+
+Stap 2) Fork deze repository, clone deze op jouw computer en open het in VSCodium/ een code editor.
+
+Stap 3) Open de Terminal in VSCodium, Voer in de terminal het commando npm install uit door het in te typen en op enter te drukken.
+
+Stap 4 ) Na de installatie is de map node_modules aangemaakt, en gevuld met allerlei packages. Start de website door in de terminal het comando npm start uit te voeren. Als het goed is, komt hier een melding te staan over het opstarten van de server: Application started on http://localhost:8000 — Open deze URL in je browser.
 
 ## Licentie
 
